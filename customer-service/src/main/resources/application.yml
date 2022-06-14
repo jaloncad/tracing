@@ -1,0 +1,23 @@
+server.port: 8091
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  application:
+    name: customer-service
+
+  sleuth:
+    otel:
+      exporter:
+        otlp:
+          endpoint: http://abcdafa2cf6124ffb97c135bad2e8726-294240519.eu-west-1.elb.amazonaws.com
+
+management:
+  endpoint:
+    beans:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: beans

@@ -1,0 +1,37 @@
+server.port: 8090
+
+addressClient:
+  baseUrl: http://localhost:8091
+
+customerClient:
+  baseUrl: http://localhost:8091
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  application:
+    name: api-service
+
+  sleuth:
+    otel:
+      exporter:
+        otlp:
+          endpoint: http://abcdafa2cf6124ffb97c135bad2e8726-294240519.eu-west-1.elb.amazonaws.com
+
+management:
+  endpoint:
+    beans:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: beans
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          servlet:
+            DispatcherServlet: DEBUG
