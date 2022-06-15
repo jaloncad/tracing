@@ -1,10 +1,10 @@
 server.port: 8090
 
 addressClient:
-  baseUrl: http://localhost:8091
+  baseUrl: http://customer-service:8091
 
 customerClient:
-  baseUrl: http://localhost:8091
+  baseUrl: http://customer-service:8091
 
 spring:
   output:
@@ -17,7 +17,7 @@ spring:
     otel:
       exporter:
         otlp:
-          endpoint: http://abcdafa2cf6124ffb97c135bad2e8726-294240519.eu-west-1.elb.amazonaws.com
+          endpoint: http://tempo.observability:4318
 
 management:
   endpoint:
@@ -35,3 +35,5 @@ logging:
         web:
           servlet:
             DispatcherServlet: DEBUG
+    io:
+      opentelemetry: DEBUG
