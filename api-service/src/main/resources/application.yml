@@ -17,7 +17,7 @@ spring:
     otel:
       exporter:
         otlp:
-          endpoint: http://tempo.observability:4318
+          endpoint: ${TEMPO_URL}
 
 management:
   endpoint:
